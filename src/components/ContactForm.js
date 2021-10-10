@@ -3,8 +3,8 @@ import PropsType from 'prop-types';
 import { v4 as uuid } from 'uuid';
 
 class ContactForm extends Component {
-  nameInputId = uuid();
-  numberInputId = uuid();
+  nameId = uuid();
+  numberId = uuid();
 
   state = {
     name: '',
@@ -38,7 +38,7 @@ class ContactForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor={this.nameInputId}>
+        <label htmlFor={this.nameId}>
           Name
           <input
             type="text"
@@ -48,10 +48,10 @@ class ContactForm extends Component {
             required
             value={name}
             onChange={this.handleChange}
-            id={this.nameInputId}
+            id={this.nameId}
           />
         </label>
-        <label htmlFor={this.numberInputId}>
+        <label htmlFor={this.numberId}>
           Number
           <input
             type="tel"
@@ -61,7 +61,7 @@ class ContactForm extends Component {
             required
             value={number}
             onChange={this.handleChange}
-            id={this.numberInputId}
+            id={this.numberId}
           />
         </label>
         <button type="submit">Add contact</button>

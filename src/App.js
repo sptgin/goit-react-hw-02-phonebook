@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Section from './components/Section';
 import ContactForm from './components/ContactForm';
-import Filter from './Filter';
-import ContactsList from './ContactsList';
+import Filter from './components/Filter';
+import ContactsList from './components/ContactsList';
 
 import './App.css';
 
