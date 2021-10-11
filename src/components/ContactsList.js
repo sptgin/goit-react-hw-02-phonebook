@@ -8,7 +8,7 @@ const ContactsList = ({ findContact, onDeleteContact }) => {
       {findContact().map(({ id, name, number }) => {
         return (
           <ContactListItem
-            className="contact__list-item"
+            className="contacts__list-item"
             key={id}
             id={id}
             name={name}

@@ -4,7 +4,9 @@ import './ContactListItem.css';
 const ContactListItem = ({ id, name, number, onDeleteContact }) => {
   return (
     <li className="contact__list-item">
-      {name}: {number}
+      <div>
+        {name}: {number}
+      </div>
       <button
         className="contact__list-delete-button"
         type="submit"
