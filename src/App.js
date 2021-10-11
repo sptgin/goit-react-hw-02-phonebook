@@ -3,7 +3,6 @@ import Section from './components/Section';
 import ContactForm from './components/ContactForm';
 import Filter from './components/Filter';
 import ContactsList from './components/ContactsList';
-
 import './App.css';
 
 class App extends Component {
@@ -17,13 +16,13 @@ class App extends Component {
     filter: '',
   };
 
-  handleChange = event => {
+  getChange = event => {
     const { name, value } = event.currentTarget;
     this.setState({ [name]: value });
   };
 
   addContact = contact => {
-    if (!this.hasContacts(contact.name)) {
+    if (!this.checkContact(contact.name)) {
       this.setState(({ contacts }) => ({
         contacts: [contact, ...contacts],
       }));
@@ -32,7 +31,7 @@ class App extends Component {
     }
   };
 
-  hasContacts = name => {
+  checkContact = name => {
     return this.state.contacts.find(contact => {
       return contact.name.toLocaleLowerCase() === name.toLocaleLowerCase();
     });
@@ -65,7 +64,7 @@ class App extends Component {
           <ContactForm onSubmit={this.addContact} />
         </Section>
         <Section title="Contacts">
-          <Filter value={this.state.filter} onChange={this.handleChange} />
+          <Filter value={this.state.filter} onChange={this.getChange} />
           <ContactsList
             findContact={this.findContact}
             onDeleteContact={this.deleteContact}
